@@ -1,4 +1,4 @@
-```yaml
+
 name: PySecrets Manual Trigger
 
 on:
@@ -27,4 +27,4 @@ jobs:
       - name: Test Easter eggs
         run: |
           python -c "import pysecrets; pysecrets.version(); pysecrets.secret()"
-```
+
