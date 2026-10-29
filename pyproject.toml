@@ -9,9 +9,7 @@ description = "Discover fun Python Easter eggs and coding surprises."
 readme = "README.md"
 requires-python = ">=3.9"
 license = {file = "LICENSE"}
-authors = [
-    {name = "shaswat"}
-]
+
 keywords = ["python", "easter-eggs", "fun"]
 
 [tool.setuptools]
