@@ -1,26 +1,18 @@
-
 [build-system]
-requires = ["setuptools>=77.0"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pysecrets-easter"
 version = "1.0.0"
-description = "A fun Python Easter egg library"
+description = "Discover fun Python Easter eggs and coding surprises."
 readme = "README.md"
-requires-python = ">=3.8"
-license = "MIT"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
 authors = [
-    {name = "Shaswat"}
+    {name = "shaswat"}
 ]
-keywords = ["python", "easter-egg", "fun", "zen", "matrix"]
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
-    "Operating System :: OS Independent",
-    "Intended Audience :: Developers"
-]
+keywords = ["python", "easter-eggs", "fun"]
 
 [tool.setuptools]
 py-modules = ["pysecrets"]
