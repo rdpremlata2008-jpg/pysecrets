@@ -1,15 +1,22 @@
-
-name: PySecrets Manual Trigger
+```yaml
+name: Publish PySecrets
 
 on:
   workflow_dispatch:
 
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
 
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pysecrets-easter/
+
+    permissions:
+      id-token: write
+
     steps:
-      - name: Get source code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -17,14 +24,12 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install package
-        run: python -m pip install .
+      - name: Install build tools
+        run: python -m pip install --upgrade build
 
-      - name: Test import
-        run: |
-          python -c "import pysecrets; print(pysecrets.__version__)"
+      - name: Build package
+        run: python -m build
 
-      - name: Test Easter eggs
-        run: |
-          python -c "import pysecrets; pysecrets.version(); pysecrets.secret()"
-
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+```
